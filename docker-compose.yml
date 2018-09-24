@@ -1,0 +1,12 @@
+version: '2'
+
+services:
+  app:
+    image: golang:1.6.1-alpine
+    command: go build
+    volumes:
+      - .:/go/src/github.com/$USER/$PROJECT
+    working_dir: /go/src/github.com/$USER/$PROJECT
+    
+
+
