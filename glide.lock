@@ -1,0 +1,20 @@
+hash: 08e4d158972ec41cc3857d179cbe4d01289e3a36ac7dca56449710ce2786df39
+updated: 2018-10-25T03:26:07.6775164Z
+imports:
+- name: golang.org/x/crypto
+  version: 74cb1d3d52f4c01cbfb44c1b50d204462f3124c7
+- name: golang.org/x/net
+  version: 9b4f9f5ad5197c79fd623a3638e70d8b26cef344
+  subpackages:
+  - http/httpguts
+  - http2
+  - http2/hpack
+  - idna
+- name: golang.org/x/text
+  version: 4d1c5fb19474adfe9562c9847ba425e7da817e81
+  subpackages:
+  - secure/bidirule
+  - transform
+  - unicode/bidi
+  - unicode/norm
+testImports: []
