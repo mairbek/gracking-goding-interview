@@ -1,6 +1,6 @@
 Let's be honest, `$GOPATH` is **annoying**.
 
-This template project requires zero installation except `docker` and allows to build and run `go` apps in the container.
+This template project requires zero installations except `docker` and allows to build and run `go` apps in the container.
 
 Modify `.env` file and run `docker-compose run app sh`.
 
