@@ -1,5 +1,6 @@
-Quick getting started with golang using docker. You don't have to set up $GOPATH and stuff,
-just run the code in the container.
+Let's be honest, `$GOPATH` is **annoying**.
+
+This template project requires zero installation except `docker` and allows to build and run `go` apps in the container.
 
 Modify `.env` file and run `docker-compose run app sh`.
 
