@@ -1,20 +1,20 @@
-hash: 08e4d158972ec41cc3857d179cbe4d01289e3a36ac7dca56449710ce2786df39
-updated: 2018-10-25T03:26:07.6775164Z
+hash: 569584fd227d6c627544f4bc65f9fcf371c4ae8d4a2e942d962d4f4b804bcda1
+updated: 2018-11-21T19:13:28.136419Z
 imports:
+- name: github.com/stretchr/testify
+  version: 8019298d9fa5a04fc2ad10ae03349df3483096a6
+  subpackages:
+  - assert
 - name: golang.org/x/crypto
   version: 74cb1d3d52f4c01cbfb44c1b50d204462f3124c7
 - name: golang.org/x/net
   version: 9b4f9f5ad5197c79fd623a3638e70d8b26cef344
+testImports:
+- name: github.com/davecgh/go-spew
+  version: d8f796af33cc11cb798c1aaeb27a4ebc5099927d
   subpackages:
-  - http/httpguts
-  - http2
-  - http2/hpack
-  - idna
-- name: golang.org/x/text
-  version: 4d1c5fb19474adfe9562c9847ba425e7da817e81
+  - spew
+- name: github.com/pmezard/go-difflib
+  version: 792786c7400a136282c1664665ae0a8db921c6c2
   subpackages:
-  - secure/bidirule
-  - transform
-  - unicode/bidi
-  - unicode/norm
-testImports: []
+  - difflib
