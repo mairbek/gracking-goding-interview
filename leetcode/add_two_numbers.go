@@ -10,12 +10,6 @@ package leetcode
 // Output: 7 -> 0 -> 8
 // Explanation: 342 + 465 = 807.
 
-// ListNode is a node in a linked list.
-type ListNode struct {
-	Val  int
-	Next *ListNode
-}
-
 func addTwoNumbers(l1 *ListNode, l2 *ListNode) *ListNode {
 	leftover := 0
 
