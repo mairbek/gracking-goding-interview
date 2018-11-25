@@ -4,7 +4,7 @@ import (
 	"testing"
 )
 
-func FromNumber(in int) *ListNode {
+func fromNumber(in int) *ListNode {
 	value := in % 10
 	result := new(ListNode)
 	result.Val = value
@@ -21,7 +21,7 @@ func FromNumber(in int) *ListNode {
 	return result
 }
 
-func ToNumber(in *ListNode) int {
+func toNumber(in *ListNode) int {
 	result := 0
 	multi := 1
 
@@ -34,7 +34,7 @@ func ToNumber(in *ListNode) int {
 }
 func TestTimeConsuming(t *testing.T) {
 	compare := func(a int, b int, expected int) {
-		actual := ToNumber(addTwoNumbers(FromNumber(a), FromNumber(b)))
+		actual := toNumber(addTwoNumbers(fromNumber(a), fromNumber(b)))
 		if actual != expected {
 			t.Errorf("Expected %d got %d", expected, actual)
 		}
