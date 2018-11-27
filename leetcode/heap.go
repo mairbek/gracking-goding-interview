@@ -8,8 +8,29 @@ package leetcode
 // - Creating heap is O(N) while creating binary tree is O(n*logn)
 // Detailed summary here https://stackoverflow.com/questions/6147242/heap-vs-binary-search-tree-bst
 type Heap struct {
-	Values []int
-	Len    int
+	Values  []int
+	Len     int
+	Compare func(int, int) bool
+}
+
+func NewMinHeap() *Heap {
+	h := new(Heap)
+	h.Len = 0
+	h.Values = []int{}
+	h.Compare = func(a int, b int) bool {
+		return a < b
+	}
+	return h
+}
+
+func NewMaxHeap() *Heap {
+	h := new(Heap)
+	h.Len = 0
+	h.Values = []int{}
+	h.Compare = func(a int, b int) bool {
+		return a > b
+	}
+	return h
 }
 
 func (h *Heap) Min() (bool, int) {
@@ -46,7 +67,7 @@ func (h *Heap) bottomUpRebalance() {
 	pos := h.Len - 1
 	for pos > 0 {
 		parent := (pos - 1) / 2
-		if h.Values[parent] <= h.Values[pos] {
+		if !h.Compare(h.Values[pos], h.Values[parent]) {
 			break
 		}
 		h.Values[parent], h.Values[pos] = h.Values[pos], h.Values[parent]
@@ -60,12 +81,12 @@ func (h *Heap) topDown() {
 		val := h.Values[pos]
 		swap := -1
 		one := 2*pos + 1
-		if one < h.Len && val > h.Values[one] {
+		if one < h.Len && !h.Compare(val, h.Values[one]) {
 			val = h.Values[one]
 			swap = one
 		}
 		two := 2*pos + 2
-		if two < h.Len && val > h.Values[two] {
+		if two < h.Len && !h.Compare(val, h.Values[two]) {
 			swap = two
 		}
 		if swap < 0 {
