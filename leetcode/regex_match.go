@@ -16,46 +16,21 @@ func isMatch(ss string, ps string) bool {
 	p := []rune(ps)
 	s := []rune(ss)
 
-	matchers := make([]Matcher, 0)
-	mlen := 0
-	for _, m := range p {
-		if m == rune('.') {
-			matchers = append(matchers, Matcher{any: true, all: false})
-			mlen++
-		} else if m == rune('*') {
-			matchers[mlen-1].all = true
-		} else {
-			matchers = append(matchers, Matcher{char: m, any: false, all: false})
-			mlen++
-		}
+	dp := make([][]bool, len(s)+1)
+	for i := range dp {
+		dp[i] = make([]bool, len(p)+1)
 	}
 
-	return runMatch(matchers, s, 0, 0)
-}
+	dp[0][0] = true
 
-func runMatch(matchers []Matcher, s []rune, mpos int, spos int) bool {
-	if mpos >= len(matchers) && spos >= len(s) {
-		return true
-	}
-	if mpos >= len(matchers) {
-		return false
-	}
-	m := matchers[mpos]
-	isMatch := spos < len(s) && (m.any || m.char == s[spos])
-	if isMatch {
-		if runMatch(matchers, s, mpos+1, spos+1) {
-			return true
-		}
-		if m.all {
-			if runMatch(matchers, s, mpos, spos+1) {
-				return true
+	for i := 0; i <= len(s); i++ {
+		for j := 1; j <= len(p); j++ {
+			if p[j-1] == rune('*') {
+				dp[i][j] = dp[i][j-2] || (i > 0 && (s[i-1] == p[j-2] || p[j-2] == rune('.')) && dp[i-1][j])
+			} else {
+				dp[i][j] = i > 0 && (s[i-1] == p[j-1] || p[j-1] == rune('.')) && dp[i-1][j-1]
 			}
 		}
 	}
-	if m.all {
-		if runMatch(matchers, s, mpos+1, spos) {
-			return true
-		}
-	}
-	return false
+	return dp[len(s)][len(p)]
 }
