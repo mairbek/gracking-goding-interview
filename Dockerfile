@@ -1,4 +1,4 @@
-FROM  golang:1.6.1-alpine
+FROM  golang:1.10.1-alpine
 
 RUN echo "Installing git and bash"
 RUN apk update && apk upgrade && \
