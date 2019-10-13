@@ -1,4 +1,4 @@
-package leetcode
+package ds
 
 // Heap vs Binary tree:
 // - Heap is implemented as a array so no memory overhead. For each node in the binary tree two pointers are allocated.

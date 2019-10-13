@@ -1,17 +1,21 @@
 package leetcode
 
+import (
+	"github.com/mairbek/gracking-goding-interview/ds"
+)
+
 // The idea is to keep a max heap with elements that are less than the median.
 // And the min heap with elements that are greater than the median.
 
 type SlidingMedianFinder struct {
-	minHeap *Heap
-	maxHeap *Heap
+	minHeap *ds.Heap
+	maxHeap *ds.Heap
 }
 
 func NewSlidingMedianFinder() SlidingMedianFinder {
 	return SlidingMedianFinder{
-		minHeap: NewMinHeap(),
-		maxHeap: NewMaxHeap(),
+		minHeap: ds.NewMinHeap(),
+		maxHeap: ds.NewMaxHeap(),
 	}
 }
 

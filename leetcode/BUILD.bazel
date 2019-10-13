@@ -6,7 +6,6 @@ go_library(
         "add_two_numbers.go",
         "first_missing_positive.go",
         "group_anagrams.go",
-        "heap.go",
         "list_node.go",
         "longest_substring.go",
         "median_finder.go",
@@ -19,6 +18,7 @@ go_library(
     ],
     importpath = "github.com/mairbek/gracking-goding-interview/leetcode",
     visibility = ["//visibility:public"],
+    deps = ["//ds:go_default_library"],
 )
 
 go_test(
@@ -27,7 +27,6 @@ go_test(
         "add_two_numbers_test.go",
         "first_missing_positive_test.go",
         "group_anagrams_test.go",
-        "heap_test.go",
         "longest_substring_test.go",
         "median_finder_test.go",
         "merge_k_lists_test.go",
