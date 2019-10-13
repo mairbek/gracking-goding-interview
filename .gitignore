@@ -12,3 +12,12 @@
 *.out
 
 vendor
+
+# Bazel shit
+bazel-bin
+bazel-genfiles
+bazel-gracking-goding-interview
+bazel-out
+bazel-testlogs
+
+.DS_Store

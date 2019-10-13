@@ -1,0 +1,42 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_library", "go_test")
+
+go_library(
+    name = "go_default_library",
+    srcs = [
+        "add_two_numbers.go",
+        "first_missing_positive.go",
+        "group_anagrams.go",
+        "heap.go",
+        "list_node.go",
+        "longest_substring.go",
+        "median_finder.go",
+        "merge_k_lists.go",
+        "pow.go",
+        "regex_match.go",
+        "remove_dups.go",
+        "rotate_array.go",
+        "sliding_window_median.go",
+    ],
+    importpath = "github.com/mairbek/gracking-goding-interview/leetcode",
+    visibility = ["//visibility:public"],
+)
+
+go_test(
+    name = "go_default_test",
+    srcs = [
+        "add_two_numbers_test.go",
+        "first_missing_positive_test.go",
+        "group_anagrams_test.go",
+        "heap_test.go",
+        "longest_substring_test.go",
+        "median_finder_test.go",
+        "merge_k_lists_test.go",
+        "pow_test.go",
+        "regex_match_test.go",
+        "remove_dups_test.go",
+        "rotate_array_test.go",
+        "sliding_window_median_test.go",
+    ],
+    embed = [":go_default_library"],
+    deps = ["@com_github_stretchr_testify//assert:go_default_library"],
+)

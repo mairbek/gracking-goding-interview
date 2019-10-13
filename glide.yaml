@@ -1,4 +1,0 @@
-import:
-- package: golang.org/x/crypto
-- package: golang.org/x/net
-- package: github.com/stretchr/testify/assert
