@@ -5,6 +5,7 @@ import (
 	"strings"
 )
 
+// an O(n) alternative to sort is to count number of elements in the array.
 func SortString(w string) string {
 	s := strings.Split(w, "")
 	sort.Strings(s)
